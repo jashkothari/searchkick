@@ -77,7 +77,7 @@ module Searchkick
 
   # private
   def self.server_info
-    @server_info ||= client.info
+    @server_info = client.info
   end
 
   def self.server_version
