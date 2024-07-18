@@ -26,7 +26,10 @@ module Searchkick
     end
 
     def search_id
+      puts record.class
+      puts record.respond_to?(:search_document_id)
       id = record.respond_to?(:search_document_id) ? record.search_document_id : record.id
+      puts "Document Identifier id - #{id}"
       id.is_a?(Numeric) ? id : id.to_s
     end
 
